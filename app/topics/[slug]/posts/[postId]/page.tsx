@@ -1,3 +1,3 @@
-export default function PostShoePage() {
-  return <div>Post Shoe</div>;
+export default function PostShowPage() {
+  return <div>Post Show</div>;
 }
