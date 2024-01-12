@@ -15,21 +15,9 @@ export default async function Home() {
       <Profile />
       {session?.user ? (
         <>
-          <form action={actions.signOut}>
-            <Button color="primary" type="submit">
-              Sign out
-            </Button>
-          </form>
           <h2>Welcome {session.user.name}</h2>
-          <h3>{session.user.email}</h3>
         </>
-      ) : (
-        <form action={actions.signIn}>
-          <Button color="primary" type="submit">
-            Sign in
-          </Button>
-        </form>
-      )}
+      ) : null}
     </main>
   );
 }
