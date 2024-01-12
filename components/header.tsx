@@ -65,11 +65,13 @@ export default async function Header() {
           JordChat
         </Link>
       </NavbarBrand>
-      <NavbarContent justify="center">
-        <NavbarItem>
-          <Input />
-        </NavbarItem>
-      </NavbarContent>
+      {session?.user && (
+        <NavbarContent justify="center">
+          <NavbarItem>
+            <Input />
+          </NavbarItem>
+        </NavbarContent>
+      )}
       <NavbarContent justify="end">{authContent}</NavbarContent>
     </Navbar>
   );
