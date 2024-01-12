@@ -1,63 +1,9 @@
 import Link from "next/link";
-import {
-  Navbar,
-  NavbarBrand,
-  NavbarContent,
-  NavbarItem,
-  Input,
-  Button,
-  Avatar,
-  Popover,
-  PopoverTrigger,
-  PopoverContent,
-} from "@nextui-org/react";
+import { Navbar, NavbarBrand, NavbarContent } from "@nextui-org/react";
 
-import { auth } from "@/auth";
-import * as actions from "@/actions";
+import HeaderAuth from "./header-auth";
 
-export default async function Header() {
-  const session = await auth();
-
-  let authContent: React.ReactNode;
-
-  if (session?.user) {
-    authContent = (
-      <Popover placement="left">
-        <PopoverTrigger>
-          <Avatar className="cursor-pointer" src={session.user.image || ""} />
-        </PopoverTrigger>
-        <PopoverContent>
-          <div className="p-4">
-            <form action={actions.signOut}>
-              <Button type="submit" color="primary">
-                Sign Out
-              </Button>
-            </form>
-          </div>
-        </PopoverContent>
-      </Popover>
-    );
-  } else {
-    authContent = (
-      <>
-        <NavbarItem>
-          <form action={actions.signIn}>
-            <Button type="submit" color="primary">
-              Sign In
-            </Button>
-          </form>
-        </NavbarItem>
-        <NavbarItem>
-          <form action={actions.signIn}>
-            <Button type="submit" variant="bordered" color="primary">
-              Sign Up
-            </Button>
-          </form>
-        </NavbarItem>
-      </>
-    );
-  }
-
+export default function Header() {
   return (
     <Navbar className="shadow mb-6">
       <NavbarBrand>
@@ -65,14 +11,10 @@ export default async function Header() {
           JordChat
         </Link>
       </NavbarBrand>
-      {session?.user && (
-        <NavbarContent justify="center">
-          <NavbarItem>
-            <Input />
-          </NavbarItem>
-        </NavbarContent>
-      )}
-      <NavbarContent justify="end">{authContent}</NavbarContent>
+
+      <NavbarContent justify="end">
+        <HeaderAuth />
+      </NavbarContent>
     </Navbar>
   );
 }
