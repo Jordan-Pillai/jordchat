@@ -24,7 +24,7 @@ export default function HeaderAuth() {
       <>
         <NavbarContent justify="center">
           <NavbarItem>
-            <Input />
+            <Input placeholder="Search" />
           </NavbarItem>
         </NavbarContent>
 
