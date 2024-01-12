@@ -1,4 +1,5 @@
 import { Button } from "@nextui-org/react";
+import Profile from "@/components/profile";
 
 import * as actions from "@/actions";
 import { auth } from "@/auth";
@@ -11,6 +12,7 @@ export default async function Home() {
       <h1 className="pt-4 pb-8 bg-gradient-to-br from-black via-[#171717] to-[#575757] bg-clip-text text-center text-4xl font-medium tracking-tight text-transparent md:text-7xl">
         JORDCHAT
       </h1>
+      <Profile />
       {session?.user ? (
         <>
           <form action={actions.signOut}>
@@ -18,7 +20,8 @@ export default async function Home() {
               Sign out
             </Button>
           </form>
-          {JSON.stringify(session.user)}
+          <h2>Welcome {session.user.name}</h2>
+          <h3>{session.user.email}</h3>
         </>
       ) : (
         <form action={actions.signIn}>
