@@ -1,12 +1,12 @@
 "use client";
 
 import { useFormStatus } from "react-dom";
-import { Button } from "@nextui-org/react";
+import { Button, ButtonVariantProps } from "@nextui-org/react";
 
 interface FormButtonProps {
   children: React.ReactNode;
-  color: string;
-  variant?: string;
+  color?: any;
+  variant?: any;
 }
 
 export default function FormButton({

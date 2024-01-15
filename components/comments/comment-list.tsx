@@ -1,3 +1,4 @@
+import { CommentWithAuthor } from "@/db/queries/comments";
 import CommentShow from "@/components/comments/comment-show";
 
 interface CommentListProps {

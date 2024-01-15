@@ -37,7 +37,7 @@ export async function createPost(
     };
   }
 
-  const session = await auth();
+  const session: any = await auth();
 
   if (!session || !session.user) {
     return {
