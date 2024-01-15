@@ -14,6 +14,8 @@ import {
 import { useSession } from "next-auth/react";
 import * as actions from "@/actions";
 
+import FormButton from "@/components/common/form-button";
+
 export default function HeaderAuth() {
   const session = useSession();
 
@@ -38,9 +40,7 @@ export default function HeaderAuth() {
           <PopoverContent>
             <div className="p-4">
               <form action={actions.signOut}>
-                <Button type="submit" color="primary">
-                  Sign Out
-                </Button>
+                <FormButton color="primary">Sign Out</FormButton>
               </form>
             </div>
           </PopoverContent>
@@ -52,16 +52,14 @@ export default function HeaderAuth() {
       <>
         <NavbarItem>
           <form action={actions.signIn}>
-            <Button type="submit" color="primary">
-              Sign In
-            </Button>
+            <FormButton color="primary">Sign In</FormButton>
           </form>
         </NavbarItem>
         <NavbarItem>
           <form action={actions.signIn}>
-            <Button type="submit" variant="bordered" color="primary">
+            <FormButton variant="bordered" color="primary">
               Sign Up
-            </Button>
+            </FormButton>
           </form>
         </NavbarItem>
       </>
