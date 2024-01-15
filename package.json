@@ -22,6 +22,7 @@
     "tailwind-variants": "^0.1.20",
     "zod": "^3.22.4"
   },
+  "postinstall": "prisma generate",
   "devDependencies": {
     "@types/node": "^20",
     "@types/react": "^18",
