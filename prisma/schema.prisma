@@ -2,15 +2,15 @@ generator client {
   provider = "prisma-client-js"
 }
 
-// datasource db {
-//   provider  = "postgresql"
-//   url       = env("POSTGRES_URL") // uses connection pooling
-// }
-
 datasource db {
-  provider = "sqlite"
-  url      = env("POSTGRES_URL")
+  provider  = "postgresql"
+  url       = env("POSTGRES_URL") // uses connection pooling
 }
+
+// datasource db {
+//   provider = "sqlite"
+//   url      = env("POSTGRES_URL")
+// }
 
 model users {
   id        Int      @id @default(autoincrement())

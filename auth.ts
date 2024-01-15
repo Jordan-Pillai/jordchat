@@ -23,7 +23,7 @@ export const {
       clientSecret: GITHUB_CLIENT_SECRET,
     }),
   ],
-  secret: "anything",
+  secret: process.env.SECRET,
   callbacks: {
     // Usually not needed
     // Fixes a bug in Next Auth
