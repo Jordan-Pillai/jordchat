@@ -23,29 +23,21 @@ export default function HeaderAuth() {
 
   if (session.data?.user) {
     authContent = (
-      <>
-        <NavbarContent justify="center">
-          <NavbarItem>
-            <Input placeholder="Search" />
-          </NavbarItem>
-        </NavbarContent>
-
-        <Popover placement="left">
-          <PopoverTrigger>
-            <Avatar
-              className="cursor-pointer"
-              src={session.data?.user.image || ""}
-            />
-          </PopoverTrigger>
-          <PopoverContent>
-            <div className="p-4">
-              <form action={actions.signOut}>
-                <FormButton color="primary">Sign Out</FormButton>
-              </form>
-            </div>
-          </PopoverContent>
-        </Popover>
-      </>
+      <Popover placement="left">
+        <PopoverTrigger>
+          <Avatar
+            className="cursor-pointer"
+            src={session.data?.user.image || ""}
+          />
+        </PopoverTrigger>
+        <PopoverContent>
+          <div className="p-4">
+            <form action={actions.signOut}>
+              <FormButton color="primary">Sign Out</FormButton>
+            </form>
+          </div>
+        </PopoverContent>
+      </Popover>
     );
   } else {
     authContent = (
